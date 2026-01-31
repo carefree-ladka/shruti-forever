@@ -3,14 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://carefree-ladka.in/shruti-forever",
+  "homepage": "https://shruti-forever.carefree-ladka.in",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist --cname carefree-ladka.in"
+    "deploy": "gh-pages -d dist --cname shruti-forever.carefree-ladka.in"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",
