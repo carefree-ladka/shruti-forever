@@ -163,3 +163,101 @@
 .animate-fadeIn {
   animation: fadeIn 1s ease-out;
 }
+
+/* Cuteness loader bubble float */
+@keyframes loaderBubble {
+  0% {
+    transform: translateY(0) scale(1) rotate(0deg);
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-110vh) scale(0.5) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.animate-loader-bubble {
+  animation: loaderBubble linear infinite;
+}
+
+/* Sparkle cursor fade */
+@keyframes sparkleFade {
+  0% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0) translateY(-30px);
+    opacity: 0;
+  }
+}
+
+.animate-sparkle-fade {
+  animation: sparkleFade 0.6s ease-out forwards;
+  font-size: 1.2rem;
+}
+
+/* Emoji rain for final screen */
+@keyframes emojiRain {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.emoji-rain {
+  position: fixed;
+  top: -50px;
+  font-size: 2rem;
+  animation: emojiRain linear forwards;
+  pointer-events: none;
+  z-index: 50;
+}
+
+/* Wiggle for start button */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+}
+
+.animate-wiggle {
+  animation: wiggle 0.5s ease-in-out infinite;
+}
+
+/* Glow pulse for cards */
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(236, 72, 153, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(236, 72, 153, 0.6), 0 0 60px rgba(168, 85, 247, 0.3);
+  }
+}
+
+.animate-glow {
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+/* Floating start screen emojis */
+@keyframes floatAround {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(20px, -30px) rotate(90deg); }
+  50% { transform: translate(-10px, -60px) rotate(180deg); }
+  75% { transform: translate(30px, -30px) rotate(270deg); }
+  100% { transform: translate(0, 0) rotate(360deg); }
+}
+
+.animate-float-around {
+  animation: floatAround ease-in-out infinite;
+}

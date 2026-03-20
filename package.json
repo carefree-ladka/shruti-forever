@@ -13,6 +13,7 @@
     "deploy": "gh-pages -d dist --cname shruti-forever.carefree-ladka.in"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@tailwindcss/vite": "^4.1.18",
     "canvas-confetti": "^1.9.4",
     "react": "^19.2.0",

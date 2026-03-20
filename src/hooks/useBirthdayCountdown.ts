@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { SITE_CONFIG } from "../data/constants";
 
 export const useBirthdayCountdown = (createBirthdayConfetti: () => void) => {
   const [timeUntilBirthday, setTimeUntilBirthday] = useState<{ days: number; hours: number; minutes: number; seconds: number } | null>(null);
@@ -8,13 +9,13 @@ export const useBirthdayCountdown = (createBirthdayConfetti: () => void) => {
     const calculateTimeUntilBirthday = () => {
       const now = new Date();
       const currentYear = now.getFullYear();
-      let birthdayThisYear = new Date(currentYear, 2, 29);
+      let birthdayThisYear = new Date(currentYear, SITE_CONFIG.birthdayMonth, SITE_CONFIG.birthdayDay);
 
       if (now > birthdayThisYear) {
-        birthdayThisYear = new Date(currentYear + 1, 2, 29);
+        birthdayThisYear = new Date(currentYear + 1, SITE_CONFIG.birthdayMonth, SITE_CONFIG.birthdayDay);
       }
 
-      const isToday = now.getDate() === 29 && now.getMonth() === 2;
+      const isToday = now.getDate() === SITE_CONFIG.birthdayDay && now.getMonth() === SITE_CONFIG.birthdayMonth;
 
       if (isToday) {
         setIsBirthday(true);

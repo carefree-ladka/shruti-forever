@@ -1,1 +1,35 @@
 @import "tailwindcss";
+
+/* Base responsive body */
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Small phones */
+@media (max-width: 360px) {
+  html { font-size: 14px; }
+}
+
+/* Large screens / TV */
+@media (min-width: 1920px) {
+  html { font-size: 18px; }
+}
+
+@media (min-width: 2560px) {
+  html { font-size: 22px; }
+}
+
+/* Prevent horizontal overflow on all screens */
+body {
+  overflow-x: hidden;
+  min-height: 100dvh;
+}
+
+/* Safe area insets for notched phones */
+@supports (padding: env(safe-area-inset-top)) {
+  .fixed.top-0 {
+    padding-top: env(safe-area-inset-top);
+  }
+}
