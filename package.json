@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist --cname shruti-forever.carefree-ladka.in"
+    "deploy": "gh-pages -d dist --cname shruti-my-love.carefree-ladka.in"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
