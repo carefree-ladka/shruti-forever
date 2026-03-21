@@ -106,7 +106,7 @@ export const sharedMemories = [
     text: `Stuck inside, just us, talking about everything. That's when I knew you were special, ${name}.`,
     icon: "🌧️",
   },
-  {
+  { 
     title: "Your Comfort 🤗",
     text: `When I'm at my lowest, you're always there, ${nameLong}. Your presence is my safe haven.`,
     icon: "🏠",

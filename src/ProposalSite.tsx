@@ -230,15 +230,39 @@ const ProposalSite = () => {
     };
   }, []);
 
+  const memoryQueue = useRef<number[]>([]);
+
+  const showNextMemory = useCallback(() => {
+    if (memoryQueue.current.length === 0) return;
+    const nextIdx = memoryQueue.current.shift()!;
+    setCurrentMemory(nextIdx);
+    setShowMemory(true);
+    setTimeout(() => {
+      if (memoryQueue.current.length > 0) {
+        showNextMemory();
+      } else {
+        setShowMemory(false);
+      }
+    }, 3000);
+  }, []);
+
   const handleYes = () => {
     if (step < messages.length - 1) {
-      if (currentMemory < sharedMemories.length) {
-        setShowMemory(true);
+      // Show 2 memories per step to fit all 10 across 5 transitions
+      const memoriesPerStep = 2;
+      const startIdx = step * memoriesPerStep;
+      const endIdx = Math.min(startIdx + memoriesPerStep, sharedMemories.length);
+
+      if (startIdx < sharedMemories.length) {
+        memoryQueue.current = [];
+        for (let i = startIdx; i < endIdx; i++) {
+          memoryQueue.current.push(i);
+        }
+        showNextMemory();
         setTimeout(() => {
           setShowMemory(false);
           setStep(step + 1);
-          setCurrentMemory(currentMemory + 1);
-        }, 3000);
+        }, (endIdx - startIdx) * 3000);
       } else {
         setStep(step + 1);
       }
